@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test</title>
+  </head>
+  <body>
+    <script src="/build/build.js"></script>
+    <script>
+      var dom = require('dom-helper');
+      var test = require('simple-test');
+
+      test('DOM.remove(elements...)', function () {
+        var div = document.createElement('div');
+
+        div.id = 'div';
+        document.body.appendChild(div);
+        test.eq(document.getElementById('div'), div);
+        dom.remove(div);
+        test.eq(document.getElementById('div'), null);
+      });
+
+      test('DOM.create(tag, id, className)', function () {
+        var div = dom.create('div', 'id', 'class');
+
+        test.ok(document.body.appendChild(div));
+        test.eq(document.getElementById('id'), div);
+        dom.remove(div);
+      });
+
+      test('DOM.insert(tag, id, className)', function () {
+        var div = dom.insert('div', 'id', 'class');
+
+        test.eq(document.getElementById('id'), div);
+        dom.remove(div);
+      });
+
+      test('DOM.insertDiv(id, className)', function () {
+        var div = dom.insertDiv('id');
+
+        test.eq(document.getElementById('id'), div);
+        dom.remove(div);
+      });
+      </script>
+  </body>
+</html>

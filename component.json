@@ -1,0 +1,17 @@
+{
+  "name": "dom-helper",
+  "repo": "shallker/dom-helper",
+  "description": "DOM helpers",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {},
+  "development": {
+    "shallker/simple-test": "*"  
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js",
+    "lib/dom-helper.js"
+  ]
+}
